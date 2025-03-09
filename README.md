@@ -1,7 +1,7 @@
 # File Exfiltration Tool
 
 ## Overview
-This project is to demonstrate a data exfiltration feature written in C++ with a Python-based server for a penetration testing engagement. This tool can also be intergrated into other malware funcitonalities. The tool allows you to transfer files from a client machine to a remote server over HTTP, with options for chunking, delays, and type-specific processing. The tool supports various file types (e.g., `.txt`, `.png`, `.docx`, `.pdf`), with image files transferred without encryption for direct usability, while other types are XOR-encrypted for basic obfuscation.
+This project is to demonstrate a data exfiltration feature written in C++ with a Python-based server for a penetration testing engagement. This tool can also be intergrated into other malware funcitonalities. The tool allows you to exfiltrate files from a client machine to a remote server over HTTP, with options for chunking, delays, and type-specific processing. The tool supports various file types (e.g., `.txt`, `.png`, `.docx`, `.pdf`), with image files transferred without encryption for direct usability, while other types are XOR-encrypted for basic obfuscation.
 
 ### Features:
 - File type detection and processing (e.g., no encryption for images).
@@ -11,7 +11,7 @@ This project is to demonstrate a data exfiltration feature written in C++ with a
 - Dummy form fields to mimic legitimate traffic.
 - Simple Python Flask server to receive and reassemble files.
 
-> **Disclaimer:** This tool is for educational purposes only. Unauthorized use for malicious purposes is illegal and unethical.
+> **Disclaimer:** Unauthorized use for malicious purposes is illegal and unethical. I hold no responsibility for any misuse.
 
 ## Prerequisites
 
@@ -21,7 +21,7 @@ This project is to demonstrate a data exfiltration feature written in C++ with a
 - **Libraries:** WinHTTP (included with Windows).
 
 ### Server (Python)
-- **Operating System:** Any (tested on Windows/Linux).
+- **Operating System:** Any (tested on VM Windows/MacOS).
 - **Python:** 3.6+.
 - **Dependencies:** Flask (`pip install flask`).
 - **Network:** Server must be reachable on port 80 (configurable).
@@ -56,7 +56,9 @@ pip install flask
 ```
 
 #### Run the Server:
-1. Save the Python script as `server.py`.
+![MacOS screenshot](Images/MacOS.png)
+
+1. Save the Python script as `app.py`.
 2. Start it on the target machine (e.g., `192.168.2.214`):
    ```bash
    python server.py
@@ -64,6 +66,7 @@ pip install flask
 3. Ensure port `80` is open and the server is reachable.
 
 ## Usage
+![VM Windows screenshot](Images/VM_Windows.png)
 
 ### Client
 Run the compiled executable with the following syntax:
@@ -117,6 +120,3 @@ File fully received and saved as exfiltrated_data.png, size: 3236 bytes
 
 ## Contributing
 Feel free to fork this repository and submit pull requests with improvements (e.g., stronger encryption, more file type processors, configuration options).
-
-## License
-This project is licensed under the MIT License. See the `LICENSE` file for details.
