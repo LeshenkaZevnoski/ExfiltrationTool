@@ -1,7 +1,7 @@
 # File Exfiltration Tool
 
 ## Overview
-This project is to demonstrate a data exfiltration feature written in C++ with a Python-based server for a penetration testing engagement.This tool can also be intergrated into other malware funcitonalities. The tool allows you to transfer files from a client machine to a remote server over HTTP, with options for chunking, delays, and type-specific processing. The tool supports various file types (e.g., `.txt`, `.png`, `.docx`, `.pdf`), with image files transferred without encryption for direct usability, while other types are XOR-encrypted for basic obfuscation.
+This project is to demonstrate a data exfiltration feature written in C++ with a Python-based server for a penetration testing engagement. This tool can also be intergrated into other malware funcitonalities. The tool allows you to transfer files from a client machine to a remote server over HTTP, with options for chunking, delays, and type-specific processing. The tool supports various file types (e.g., `.txt`, `.png`, `.docx`, `.pdf`), with image files transferred without encryption for direct usability, while other types are XOR-encrypted for basic obfuscation.
 
 ### Features:
 - File type detection and processing (e.g., no encryption for images).
